@@ -13,10 +13,9 @@ class Main {
             cnt += money/coin[i];
             money = money%coin[i];
         }
-        if(money != 0) {
+        if(money != 0) 
             cnt += money;
-        }
-
+        
         System.out.print(cnt);
     }
 }
