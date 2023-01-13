@@ -1,15 +1,16 @@
 import java.io.*;
-import java.util.Scanner;
+import java.util.StringTokenizer;
 
 class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int i=1;
 
         while(true) {
-            int l = sc.nextInt();
-            int p = sc.nextInt();
-            int v = sc.nextInt();
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            int l = Integer.parseInt(st.nextToken());
+            int p = Integer.parseInt(st.nextToken());
+            int v = Integer.parseInt(st.nextToken());
 
             if(l==0 && p==0 && v==0) break;
             int res = 0;
