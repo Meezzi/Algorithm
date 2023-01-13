@@ -3,20 +3,17 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        Scanner sc = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         String res = "";
         int cnt = 0;
-        int[] arr = new int[8];
+
+        String[] arr = br.readLine().trim().split(" ");
 
         for(int i=0; i<arr.length; i++) {
-            arr[i] = sc.nextInt();
-        }
-
-        for(int i=0; i<arr.length; i++) {
-            if(arr[i]==i+1) {
+            if(Integer.parseInt(arr[i])==i+1) {
                 cnt ++;
-            } else if (arr[7-i] == i+1) {
+            } else if (Integer.parseInt(arr[7-i]) == i+1) {
                 cnt --;
             }
         }
