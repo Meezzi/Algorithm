@@ -7,11 +7,19 @@ public class Main {
         StringTokenizer st = new StringTokenizer(br.readLine());
 
         int[] arr = new int[3];
-        arr[0] = Integer.parseInt(st.nextToken());
-        arr[1] = Integer.parseInt(st.nextToken());
-        arr[2] = Integer.parseInt(st.nextToken());
+        for(int i=0; i<3; i++) {
+            arr[i] = Integer.parseInt(st.nextToken());
+        }
 
-        Arrays.sort(arr);
+        for(int i=0; i<arr.length; i++) {
+            for(int j=i+1; j<arr.length; j++) {
+                if(arr[j]>arr[i]) {
+                    int temp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = temp;
+                }
+            }
+        }
 
         System.out.print(arr[1]);
 
