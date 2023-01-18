@@ -8,14 +8,23 @@ class Main {
 
         int a = Integer.parseInt(br.readLine());
         int[] arr = new int[a];
+        int[] cnt = new int[10001];
+
         for(int i=0; i<a; i++) {
             arr[i] = Integer.parseInt(br.readLine());
         }
 
-        Arrays.sort(arr);
+        for(int i=0; i<a; i++) {
+            cnt[arr[i]]++;
+        }
 
-        for(int i=0; i<arr.length; i++) {
-            sb.append(arr[i]).append('\n');
+        for(int i=1; i<cnt.length; i++) {
+            
+            while(cnt[i] > 0) {
+                sb.append(i).append('\n');
+                cnt[i]--;
+            }
+
         }
 
         System.out.print(sb);
