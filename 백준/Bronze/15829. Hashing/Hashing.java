@@ -8,9 +8,9 @@ class Main {
 
         int a = Integer.parseInt(br.readLine());
         String str = br.readLine();
-        int ii=0;
-        int sum = 0;
-        int sqrt=0;
+        long ii=0;
+        long sum = 0;
+        long sqrt=0;
 
         for(int i=0; i<a; i++) {
             char arr = str.charAt(i);
@@ -20,7 +20,7 @@ class Main {
             sum += ii * sqrt;
         }
 
-        int res = sum%1234567891;
+        long res = sum%1234567891;
 
         System.out.println(res);
 
