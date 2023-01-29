@@ -2,42 +2,41 @@ import java.util.*;
 import java.io.*;
 
 class Main {
-    public static void main(String[] args) throws NumberFormatException, IOException {
-        Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        int arr[] = new int[a];
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuffer sb = new StringBuffer();
+        int a = Integer.parseInt(br.readLine());
+        int[] arr = new int[a];
+        boolean res = true;
 
         for(int i=0; i<a; i++) {
-            arr[i] = sc.nextInt();
+            arr[i] = Integer.parseInt(br.readLine());
         }
 
         Stack<Integer> stack = new Stack<>();
-        StringBuffer bf = new StringBuffer();
         int num=1;
-        boolean result = true;
-        for(int i=0; i<arr.length; i++) {
+        for(int i=0; i<a; i++) {
             int su = arr[i];
             if(su>=num) {
                 while(su>=num) {
                     stack.push(num++);
-                    bf.append("+\n");
+                    sb.append("+\n");
                 }
                 stack.pop();
-                bf.append("-\n");
-            }
-            else {
+                sb.append("-\n");
+            } else {
                 int n = stack.pop();
                 if(n>su) {
                     System.out.println("NO");
-                    result = false;
+                    res = false;
                     break;
+                } else {
+                    sb.append("-\n");
                 }
-                else {
-                    bf.append("-\n");
-                }
+
             }
         }
-        if(result) System.out.println(bf.toString());
+        if(res) System.out.println(sb);
 
     }
 }
