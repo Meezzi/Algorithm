@@ -9,21 +9,22 @@ class Main {
 
         int m = Integer.parseInt(br.readLine());
         int n = Integer.parseInt(br.readLine());
-
-        prime = new boolean[n+1];
-        get_prime();
-
         int sum = 0;
         int min = Integer.MAX_VALUE;
+
+        prime = new boolean[n+1];
+
+        get_prime(n);
+
         for(int i=m; i<=n; i++) {
             if(prime[i] == false) {
-                sum += i;
-                if(min == Integer.MAX_VALUE) {
-                    min=i;
+                sum +=i;
+                if(min==Integer.MAX_VALUE) {
+                    min = i;
                 }
             }
         }
-
+        
         if(sum==0) System.out.println(-1);
         else {
             System.out.println(sum);
@@ -31,11 +32,11 @@ class Main {
         }
     }
 
-    public static void get_prime() {
+    public static void get_prime(int n) {
         prime[0] = true;
         prime[1] = true;
 
-        for(int i=2; i<=Math.sqrt(prime.length); i++) {
+        for(int i=2; i<=n; i++) {
             if(prime[i]) continue;
             for(int j=i*i; j<prime.length; j+=i) {
                 prime[j] = true;
