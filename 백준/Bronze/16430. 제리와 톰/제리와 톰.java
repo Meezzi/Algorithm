@@ -10,7 +10,7 @@ class Main {
         int b = Integer.parseInt(st.nextToken());
 
         int i=2, res1 = b-a, res2 =b;
-        while(i<b) {
+        while(i<Math.sqrt(b)) {
             if(b%i==0 && (b-a)%i==0) {
                 res1 = (b-a)/i;
                 res2 = b/i;
