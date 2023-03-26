@@ -1,42 +1,44 @@
-import java.util.*;
 import java.io.*;
+import java.util.*;
 
 class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException  {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringBuffer sb = new StringBuffer();
-        int a = Integer.parseInt(br.readLine());
-        int[] arr = new int[a];
-        boolean res = true;
 
-        for(int i=0; i<a; i++) {
+        int n = Integer.parseInt(br.readLine());
+        int[] arr = new int[n];
+
+        for(int i=0; i<n; i++) {
             arr[i] = Integer.parseInt(br.readLine());
         }
 
         Stack<Integer> stack = new Stack<>();
+        StringBuffer bf = new StringBuffer();
+
         int num=1;
-        for(int i=0; i<a; i++) {
+        boolean result = true;
+
+        for(int i=0; i<arr.length; i++) {
             int su = arr[i];
             if(su>=num) {
                 while(su>=num) {
                     stack.push(num++);
-                    sb.append("+\n");
+                    bf.append("+\n");
                 }
                 stack.pop();
-                sb.append("-\n");
+                bf.append("-\n");
             } else {
-                int n = stack.pop();
-                if(n>su) {
+                int p = stack.pop();
+                if(p>su) {
                     System.out.println("NO");
-                    res = false;
+                    result = false;
                     break;
                 } else {
-                    sb.append("-\n");
+                    bf.append("-\n");
                 }
-
             }
         }
-        if(res) System.out.println(sb);
-
+        
+        if(result) System.out.println(bf.toString());
     }
 }
