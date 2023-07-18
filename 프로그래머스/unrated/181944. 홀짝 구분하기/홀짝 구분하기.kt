@@ -1,10 +1,4 @@
 fun main(args: Array<String>) {
     val a = readln().toInt()
-    if (isOdd(a)) {
-        println("$a is odd")
-    } else println("$a is even")
-}
-
-fun isOdd(a: Int): Boolean {
-    return a % 2 != 0
+    println("$a is ${if (a%2==0) "even" else "odd"}")
 }
