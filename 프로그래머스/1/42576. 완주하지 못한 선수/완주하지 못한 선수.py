@@ -9,7 +9,8 @@ def solution(participant, completion):
     for i in completion :
         if part[i] == 1 :
             del part[i]
-        else:
+        else :
             part[i] -= 1
+    
     answer = list(part)
     return answer[0]
