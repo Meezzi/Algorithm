@@ -13,6 +13,7 @@ class Solution {
     //     return count;
     // }
 
+    // value값과 val값이 같으면 삭제 후, nums의 길이값 반환
     int removeElement(List<int> nums, int val) {
         nums.removeWhere((value) => value == val);
 
