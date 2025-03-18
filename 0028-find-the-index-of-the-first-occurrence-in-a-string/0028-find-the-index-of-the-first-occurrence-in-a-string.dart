@@ -16,7 +16,6 @@
 // RangeError가 발생했다.
 class Solution {
   int strStr(String haystack, String needle) {
-    int result = 0;
     for (int i = 0; i < haystack.length - needle.length + 1; i++) {
       if(haystack.substring(i, i + needle.length) == needle) {
         return i;
